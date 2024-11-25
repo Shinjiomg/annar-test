@@ -1,0 +1,8 @@
+<header class="p-3 flex md:justify-between flex-col md:flex-row items-center bg-blue-500 sticky top-0">
+  <h1 class="text-3xl text-white italic uppercase font-bold">{{ title }}</h1>
+  <nav class="flex gap-2">
+    <a routerLink="/users" class="p-2 text-white hover:bg-blue-700 rounded-xl">Usuarios</a>
+    <a routerLink="/users/form" class="p-2 text-white hover:bg-blue-700 rounded-xl">Crear Nuevo Usuario</a>
+  </nav>
+</header>
+<router-outlet></router-outlet>

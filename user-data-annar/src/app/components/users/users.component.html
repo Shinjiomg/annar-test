@@ -1,0 +1,160 @@
+<div class="flex p-2 justify-center bg-slate-100 flex-wrap">
+    <div class="p-4 flex flex-col border-border-black w-[700px] md:w-auto bg-white gap-2 rounded-xl shadow-md flex-wrap">
+        <h1 class="text-3xl uppercase font-bold text-center">Usuarios</h1>
+        <input type="text" placeholder="Buscar usuarios..." [(ngModel)]="searchTerm"
+            class="p-2 border border-slate-200 w-full rounded-full outline-none">
+        <ul class="flex flex-col gap-2 items-start">
+            <li *ngFor="let user of getFilteredUsers()"
+                class="p-4 border border-slate-200 w-full flex flex-col rounded-xl">
+                <div class="flex md:justify-between md:flex-row flex-col">
+                    <div>
+                        <div class="text-xl font-bold flex flex-row gap-2 items-start md:items-center">
+                            <p class="flex items-center">
+                                <svg id='Name_Tag_Woman_Horizontal_24' width='24' height='24' viewBox='0 0 24 24'
+                                    xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+                                    <rect width='24' height='24' stroke='none' fill='#000000' opacity='0' />
+
+
+                                    <g transform="matrix(0.71 0 0 0.71 12 12)">
+                                        <path
+                                            style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+                                            transform=" translate(-16, -15)"
+                                            d="M 15 4 L 15 6 L 5 6 C 3.3550302 6 2 7.3550302 2 9 L 2 23 C 2 24.64497 3.3550302 26 5 26 L 27 26 C 28.64497 26 30 24.64497 30 23 L 30 9 C 30 7.3550302 28.64497 6 27 6 L 17 6 L 17 4 L 15 4 z M 5 8 L 27 8 C 27.56503 8 28 8.4349698 28 9 L 28 23 C 28 23.56503 27.56503 24 27 24 L 5 24 C 4.4349698 24 4 23.56503 4 23 L 4 9 C 4 8.4349698 4.4349698 8 5 8 z M 11 10 C 8.8026661 10 7 11.802666 7 14 C 7 15.151992 7.5107676 16.176056 8.2988281 16.908203 C 6.9485276 17.80602 6 19.266416 6 21 L 8 21 C 8 19.331516 9.3315161 18 11 18 C 12.668484 18 14 19.331516 14 21 L 16 21 C 16 19.312797 15.098733 17.887153 13.808594 16.980469 C 14.161693 16.752394 14.535099 16.536664 14.849609 16.300781 C 15.913609 15.502781 16.707031 14.707031 16.707031 14.707031 L 17.414062 14 L 16.707031 13.292969 C 16.707031 13.292969 15.913609 12.497219 14.849609 11.699219 C 13.785609 10.901219 12.5 10 11 10 z M 19 11 L 19 13 L 26 13 L 26 11 L 19 11 z M 11 12 C 11.5 12 12.714391 12.598781 13.650391 13.300781 C 14.115685 13.649752 14.173429 13.736494 14.466797 14 C 14.173429 14.263506 14.115685 14.350248 13.650391 14.699219 C 12.714391 15.401219 11.5 16 11 16 C 9.8833339 16 9 15.116666 9 14 C 9 12.883334 9.8833339 12 11 12 z M 19 15 L 19 17 L 26 17 L 26 15 L 19 15 z M 19 19 L 19 21 L 24 21 L 24 19 L 19 19 z"
+                                            stroke-linecap="round" />
+                                    </g>
+                                </svg>
+                                {{ user.name }}
+                            </p>
+                            <p class="text-md text-gray-500 italic flex"> {{ user.username }}</p>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:gap-2">
+                            <p class="text-md text-gray-600 font-semibold flex">
+                                <svg id='device-mobile_24' width='24' height='24' viewBox='0 0 24 24'
+                                    xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+                                    <rect width='24' height='24' stroke='none' fill='#000000' opacity='0' />
+
+
+                                    <g transform="matrix(1 0 0 1 12 12)">
+                                        <g style="">
+                                            <g transform="matrix(1 0 0 1 0 0)">
+                                                <path
+                                                    style="stroke: none; stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
+                                                    transform=" translate(-12, -12)" d="M 0 0 L 24 0 L 24 24 L 0 24 z"
+                                                    stroke-linecap="round" />
+                                            </g>
+                                            <g transform="matrix(1 0 0 1 0 0)">
+                                                <rect
+                                                    style="stroke: rgb(33,33,33); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
+                                                    x="-6" y="-9" rx="2" ry="2" width="12" height="18" />
+                                            </g>
+                                            <g transform="matrix(1 0 0 1 0 -8)">
+                                                <line
+                                                    style="stroke: rgb(33,33,33); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
+                                                    x1="-1" y1="0" x2="1" y2="0" />
+                                            </g>
+                                            <g transform="matrix(1 0 0 1 0 5.01)">
+                                                <line
+                                                    style="stroke: rgb(33,33,33); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
+                                                    x1="0" y1="-0.005000000000000782" x2="0"
+                                                    y2="0.005000000000000782" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                                {{ user.phone }}
+                            </p>
+                            <p class="text-md text-gray-700 font-bold flex">
+                                <svg id='Email_Open_24' width='24' height='24' viewBox='0 0 24 24'
+                                    xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+                                    <rect width='24' height='24' stroke='none' fill='#000000' opacity='0' />
+
+
+                                    <g transform="matrix(0.83 0 0 0.83 12 12)">
+                                        <path
+                                            style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+                                            transform=" translate(-16, -16)"
+                                            d="M 6 5 L 6 9.5058594 L 4.0078125 10.802734 L 4.0078125 27 L 27.992188 27 L 27.992188 10.802734 L 26 9.5039062 L 26 5 L 6 5 z M 8 7 L 24 7 L 24 12.091797 L 16 17.273438 L 8 12.091797 L 8 7 z M 6.0078125 13.183594 L 16 19.65625 L 25.992188 13.183594 L 25.992188 25 L 6.0078125 25 L 6.0078125 13.183594 z"
+                                            stroke-linecap="round" />
+                                    </g>
+                                </svg>
+                                {{ user.email }}
+                            </p>
+                        </div>
+                        <p class="text-lg text-gray-600 font-bold flex">
+                            <svg id='Address_24' width='24' height='24' viewBox='0 0 24 24'
+                                xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+                                <rect width='24' height='24' stroke='none' fill='#000000' opacity='0' />
+
+
+                                <g transform="matrix(0.75 0 0 0.75 12 12)">
+                                    <path
+                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: purple; fill-rule: nonzero; opacity: 1;"
+                                        transform=" translate(-16, -16)"
+                                        d="M 16 4 C 12.698375 4 10 6.6983746 10 10 C 10 10.992073 10.372526 12.007453 10.865234 13.128906 C 11.134592 13.74199 11.450368 14.372458 11.783203 15 L 6.2363281 15 L 2.6914062 28 L 29.308594 28 L 25.763672 15 L 20.216797 15 C 20.549632 14.372458 20.865408 13.74199 21.134766 13.128906 C 21.627474 12.007453 22 10.992073 22 10 C 22 6.6983746 19.301625 4 16 4 z M 16 6 C 18.220375 6 20 7.7796254 20 10 C 20 10.388427 19.747526 11.311828 19.302734 12.324219 C 18.857943 13.336609 18.248139 14.475809 17.634766 15.533203 C 16.81857 16.940243 16.45617 17.440987 16 18.126953 C 15.54383 17.440987 15.18143 16.940243 14.365234 15.533203 C 13.751861 14.475809 13.142057 13.336609 12.697266 12.324219 C 12.252474 11.311828 12 10.388427 12 10 C 12 7.7796254 13.779625 6 16 6 z M 16 8.5 C 15.17157287525381 8.5 14.5 9.17157287525381 14.5 10 C 14.5 10.82842712474619 15.17157287525381 11.5 16 11.5 C 16.82842712474619 11.5 17.5 10.82842712474619 17.5 10 C 17.5 9.17157287525381 16.82842712474619 8.5 16 8.5 z M 7.7636719 17 L 12.912109 17 C 14.083771 18.974921 15.177734 20.568359 15.177734 20.568359 L 16 21.759766 L 16.822266 20.568359 C 16.822266 20.568359 17.916229 18.974921 19.087891 17 L 24.236328 17 L 26.691406 26 L 5.3085938 26 L 7.7636719 17 z"
+                                        stroke-linecap="round" />
+                                </g>
+                            </svg>
+                            {{ user.address.street }}
+                        </p>
+
+                    </div>
+                    <div class="flex flex-col md:flex-col md:gap-2 text-xl md:items-end">
+                        <p class="flex items-center italic">
+                            <svg id='Website_24' width='24' height='24' viewBox='0 0 24 24'
+                                xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+                                <rect width='24' height='24' stroke='none' fill='#000000' opacity='0' />
+
+
+                                <g transform="matrix(0.83 0 0 0.83 12 12)">
+                                    <g style="">
+                                        <g transform="matrix(1 0 0 1 0 0)">
+                                            <path
+                                                style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+                                                transform=" translate(-12, -12)"
+                                                d="M 18.206 17 C 17.306 18.112000000000002 16.13 18.992 14.763 19.498 C 15.075 18.77 15.326 17.92 15.518 17 L 13.461 17 C 12.982000000000001 18.977 12.312000000000001 20 11.999 20 C 11.686 20 11.016 18.977 10.537 17 L 8.481 17 C 8.673 17.92 8.924 18.77 9.236 19.498 C 7.87 18.992 6.694 18.112 5.794 17 L 3.353 17 C 5.085 19.984 8.308 22 12 22 C 15.692 22 18.915 19.984 20.647 17 L 18.206 17 z M 5.794 7 C 6.694 5.888 7.869999999999999 5.008 9.237 4.502 C 8.924 5.23 8.673 6.08 8.481 7 L 10.538 7 C 11.017 5.023 11.687 4 12 4 C 12.313 4 12.983 5.023 13.462 7 L 15.519 7 C 15.327 6.08 15.076 5.23 14.764 4.502 C 16.13 5.008 17.306 5.888 18.206 7 L 20.647 7 C 18.915 4.016 15.692 2 12 2 C 8.308 2 5.085 4.016 3.353 7 L 5.794 7 z M 5.752 12.366 L 6.29 9 L 7.793 9 L 6.551 15 L 5.248 15 L 4.4 11.529 L 3.551 15 L 2.242 15 L 1 9 L 2.508 9 L 3.04 12.372 L 3.839 9 L 4.954 9 L 5.752 12.366 z M 13.356 12.366 L 13.894 9 L 15.397 9 L 14.155000000000001 15 L 12.852 15 L 12.004 11.529 L 11.154 15 L 9.846 15 L 8.604 9 L 10.111999999999998 9 L 10.643999999999998 12.372 L 11.443 9 L 12.558 9 L 13.356 12.366 z M 20.959 12.366 L 21.497 9 L 23 9 L 21.758 15 L 20.455 15 L 19.607 11.529 L 18.758 15 L 17.448999999999998 15 L 16.206999999999997 9 L 17.714999999999996 9 L 18.246999999999996 12.372 L 19.046 9 L 20.160999999999998 9 L 20.959 12.366 z"
+                                                stroke-linecap="round" />
+                                        </g>
+                                        <g transform="matrix(1 0 0 1 0 -7)">
+                                            <path
+                                                style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 0.13;"
+                                                transform=" translate(-12, -5)"
+                                                d="M 4.518 7 L 19.483 7 C 17.868 4.589 15.12 3 12 3 C 8.88 3 6.132 4.589 4.518 7 z"
+                                                stroke-linecap="round" />
+                                        </g>
+                                        <g transform="matrix(1 0 0 1 0 7)">
+                                            <path
+                                                style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 0.13;"
+                                                transform=" translate(-12, -19)"
+                                                d="M 19.482 17 L 4.518 17 C 6.132 19.411 8.88 21 12 21 C 15.12 21 17.868 19.411 19.482 17 z"
+                                                stroke-linecap="round" />
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                            {{ user.website }}
+                        </p>
+                        <p class="flex items-center font-semibold text-gray-500">
+                            <svg id='Company_24' width='24' height='24' viewBox='0 0 24 24'
+                                xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+                                <rect width='24' height='24' stroke='none' fill='#000000' opacity='0' />
+
+
+                                <g transform="matrix(1.43 0 0 1.43 12 12)">
+                                    <path
+                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+                                        transform=" translate(-8, -7.5)"
+                                        d="M 2.5 1 C 1.6774686 1 1 1.6774686 1 2.5 L 1 3.5 L 1 13.5 L 1 14 L 15 14 L 15 13.5 L 15 13 L 15 5.75 C 15 5.3414686 14.658531 5 14.25 5 L 11 5 L 11 3.5 L 11 2.5 C 11 1.6774686 10.322531 1 9.5 1 L 8.5 1 L 3.5 1 L 2.5 1 z M 2.5 2 L 3.5 2 L 8.5 2 L 9.5 2 C 9.7814686 2 10 2.2185314 10 2.5 L 10 3.5 L 10 13 L 7 13 L 7 11 L 5 11 L 5 13 L 2 13 L 2 3.5 L 2 2.5 C 2 2.2185314 2.2185314 2 2.5 2 z M 3 3 L 3 4 L 4 4 L 4 3 L 3 3 z M 5 3 L 5 4 L 7 4 L 7 3 L 5 3 z M 8 3 L 8 4 L 9 4 L 9 3 L 8 3 z M 3 5 L 3 6 L 4 6 L 4 5 L 3 5 z M 5 5 L 5 6 L 7 6 L 7 5 L 5 5 z M 8 5 L 8 6 L 9 6 L 9 5 L 8 5 z M 11 6 L 14 6 L 14 13 L 11 13 L 11 6 z M 3 7 L 3 8 L 4 8 L 4 7 L 3 7 z M 5 7 L 5 8 L 7 8 L 7 7 L 5 7 z M 8 7 L 8 8 L 9 8 L 9 7 L 8 7 z M 12 7 L 12 8 L 13 8 L 13 7 L 12 7 z M 3 9 L 3 10 L 4 10 L 4 9 L 3 9 z M 5 9 L 5 10 L 7 10 L 7 9 L 5 9 z M 8 9 L 8 10 L 9 10 L 9 9 L 8 9 z M 12 9 L 12 10 L 13 10 L 13 9 L 12 9 z M 3 11 L 3 12 L 4 12 L 4 11 L 3 11 z M 8 11 L 8 12 L 9 12 L 9 11 L 8 11 z M 12 11 L 12 12 L 13 12 L 13 11 L 12 11 z"
+                                        stroke-linecap="round" />
+                                </g>
+                            </svg>
+                            {{ user.company.name}}
+                        </p>
+                    </div>
+                </div>
+
+                <button routerLink="form/{{user.id}}" (click)="showUserDetails(user)"
+                    class="w-auto p-2 bg-blue-500 rounded-xl text-white hover:bg-blue-700">Ver detalles</button>
+            </li>
+        </ul>
+    </div>
+</div>

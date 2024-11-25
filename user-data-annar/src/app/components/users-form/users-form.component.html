@@ -1,0 +1,60 @@
+<div class="flex justify-center bg-slate-100 p-2 h-[92vh] flex-wrap">
+    <div class="p-4 flex flex-col border-border-black w-[700px] h-auto bg-white gap-2 rounded-xl shadow-md flex-wrap">
+        <h1 class="text-3xl uppercase font-bold text-center">Crear Nuevo Usuario</h1>
+        <form (submit)="saveUser()" class="flex flex-col gap-2" #userForm="ngForm">
+            <h2 class="text-xl font-bold">Información Personal</h2>
+            <div class="flex gap-2 flex-col">
+                <div class="flex md:flex-row gap-2 flex-col">
+                    <input type="text" placeholder="Nombre" [(ngModel)]="newUser.name" name="name"
+                        class="p-3 border border-slate-200 rounded-full w-full outline-none" required>
+                    <input type="email" placeholder="Correo electrónico" [(ngModel)]="newUser.email" name="email"
+                        class="p-3 border border-slate-200 rounded-full w-full outline-none" required>
+                </div>
+                <div class="flex md:flex-row gap-2 flex-col">
+                    <input type="tel" placeholder="Teléfono" [(ngModel)]="newUser.phone" name="phone" required
+                        class="p-3 border border-slate-200 rounded-full md:w-2/3 outline-none">
+                    <input type="text" placeholder="Nombre de usuario" [(ngModel)]="newUser.username" name="username"
+                        class="p-3 border border-slate-200 rounded-full md:w-1/3 outline-none">
+                </div>
+                <input type="text" placeholder="Sitio web" [(ngModel)]="newUser.website" name="website"
+                    class="p-3 border border-slate-200 rounded-full w-full outline-none">
+            </div>
+            <h2 class="text-xl font-bold">Dirección</h2>
+            <div class="flex flex-col gap-2">
+                <div class="flex md:flex-row gap-2 flex-col">
+                    <input type="text" placeholder="Dirección" [(ngModel)]="newUser.address.street" name="street"
+                        class="p-3 border border-slate-200 rounded-full md:w-1/2 outline-none" required>
+                    <input type="text" placeholder="Piso/Casa" [(ngModel)]="newUser.address.suite" name="suite"
+                        class="p-3 border border-slate-200 rounded-full md:w-1/2 outline-none" required>
+                </div>
+                <div class="flex md:flex-row gap-2 flex-col">
+                    <input type="text" placeholder="Ciudad" [(ngModel)]="newUser.address.city" name="city"
+                        class="p-3 border border-slate-200 rounded-full md:w-1/3 outline-none" required>
+                    <input type="text" placeholder="Código Postal" [(ngModel)]="newUser.address.zipcode" name="zipcode"
+                        class="p-3 border border-slate-200 rounded-full md:w-2/3 outline-none" required>
+                </div>
+                <div class="flex md:flex-row gap-2 flex-col">
+                    <input type="text" placeholder="Latitud" [(ngModel)]="newUser.address.geo.lat" name="lat"
+                        class="p-3 border border-slate-200 rounded-full md:w-1/2 outline-none" required>
+                    <input type="text" placeholder="Longitud" [(ngModel)]="newUser.address.geo.lng" name="lng"
+                        class="p-3 border border-slate-200 rounded-full md:w-1/2 outline-none" required>
+                </div>
+            </div>
+            <h2 class="text-xl font-bold">Compañía</h2>
+            <div class="flex flex-col gap-2">
+                <div class="flex md:flex-row gap-2 flex-col">
+                    <input type="text" placeholder="Nombre de la compañía" [(ngModel)]="newUser.company.name"
+                        name="company-name" class="p-3 border border-slate-200 rounded-full w-full outline-none">
+                    <input type="text" placeholder="Objetivo" [(ngModel)]="newUser.company.bs" name="bs"
+                        class="p-3 border border-slate-200 rounded-full w-full outline-none">
+                </div>
+                <div class="flex md:flex-row gap-2 flex-col">
+                    <input type="text" placeholder="Slogan" [(ngModel)]="newUser.company.catchPhrase" name="catchPhrase"
+                        class="p-3 border border-slate-200 rounded-full w-full outline-none">
+                </div>
+            </div>
+            <button type="submit" [disabled]="!userForm.valid"
+                class="p-2 w-full rounded-full bg-blue-500 text-white hover:bg-blue-700 disabled:hover:bg-blue-400 disabled:cursor-not-allowed disabled:bg-blue-400">Guardar</button>
+        </form>
+    </div>
+</div>
